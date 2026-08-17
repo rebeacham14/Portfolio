@@ -1,0 +1,87 @@
+.portal-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 2.1rem 1.8rem 1.8rem;
+  min-height: 240px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0));
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.portal-card:hover,
+.portal-card:focus-visible {
+  border-color: color-mix(in srgb, var(--card-accent) 55%, var(--border));
+  transform: translateY(-4px);
+}
+
+.portal-card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--card-accent) 28%, transparent), transparent 70%);
+  transition: opacity 0.35s ease;
+}
+
+.portal-card:hover .portal-card-glow,
+.portal-card:focus-visible .portal-card-glow {
+  opacity: 1;
+}
+
+.portal-card-glyph {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  color: var(--card-accent);
+  margin-bottom: 0.6rem;
+}
+
+.portal-card-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.portal-card-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 0.15rem;
+}
+
+.portal-card-tagline {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-dim);
+  margin-top: 0.15rem;
+}
+
+.portal-card-enter {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--card-accent);
+  opacity: 0.75;
+}
+
+.portal-card-enter-arrow {
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.portal-card:hover .portal-card-enter-arrow {
+  transform: translateX(4px);
+}
